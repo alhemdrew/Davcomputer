@@ -1,0 +1,35 @@
+*
+#form_section{
+    margin-top: 2rem;
+    margin-left: 10px;
+    font-size: 20px;
+    
+} 
+form{
+    margin-top: 1rem;
+}
+.top{
+    text-align: center;
+    color: blue;
+}
+.account-details{
+    border: 3px purple dotted;
+    width: 200px;
+  margin-top: 50px;
+  padding: 20px;
+  color: rgb(96, 96, 245);
+  font-size: 20px;
+}
+.account-details h4{
+    text-decoration: underline;
+    color: blue;
+    
+}
+.account-details ul li span{
+    color: whitesmoke;
+    font-size: 15px;
+    text-decoration: d;
+    
+
+
+}
