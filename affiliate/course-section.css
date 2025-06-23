@@ -1,0 +1,236 @@
+
+.header h1{
+  font-size: 20px;
+  text-align: left;
+  color: white;
+  padding: 10px;
+  padding-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.headerxx img {
+  height: 150px;
+  width: 90%;
+  
+  padding-left: 10px;
+ 
+}
+
+.headerxx{
+  border: 1px  solid;
+  background: rgb(19, 19, 114);
+  gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  padding: 0;
+}
+.headerxx h2{   text-align: left;
+  font-size: 25px auto;
+  position: absolute;
+  margin-left: 45%;
+  z-index: 1;
+  color: white;
+  margin-right: 20px;
+  position: absolute;
+  
+}
+.description__container{
+height: auto ;
+background: rgb(0, 0, 0);
+
+}
+.description__container h1{
+font-family: 30px;
+}
+p{
+  color: white;
+  font-size: 15px;
+  
+}
+.start_course span{
+  font-size: 20px;
+}
+.start_course h1{
+ margin: 20px;
+  color: white;
+  background: rgb(2, 2, 56) ;
+  text-align: center;
+  border-radius: 50px;
+  height: 50px;
+  line-height: 40px;
+  position: 50%;
+  position: relative;
+  margin-top: 0;
+  padding-bottom:10px;
+ 
+}
+@media screen and (max-width: 360px) {
+.arrow-down{
+  color: white;
+  font-size: 10px;
+  padding-left: 10px;
+ 
+}
+}
+.start_course{
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+.start_course a,.start_course h1 {
+text-decoration: none;
+font-size: 15px auto;
+padding: 10px;
+padding-top: 0;
+padding-left: 0;
+color: white;
+
+}
+.arrow-down{
+  color: white;
+font-size: 30px;
+
+
+}
+.h1 h1 {
+  color: rgb(92, 166, 231);
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+  
+}
+.h1{
+  color:white;
+  font-weight: bold;
+}
+.bck_img img{
+  height: 180px;
+  position: absolute;
+  opacity: 0.3;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 40px;
+  padding-bottom: 30px;
+  padding-top:0 ;
+ width: 90% ;
+  
+}
+
+.course_desc p{
+  z-index: 5555;
+font-weight: bold;
+  padding: 0;
+  color: white;
+  padding: 10px ;
+ margin-left: 20px;
+  font-size: 30px;
+  position: relative;
+}
+a{
+  text-decoration: none;
+  color: blue;
+ 
+}
+.course_desc {
+  background: rgb(20, 20, 20);
+  height: auto;
+  padding: 10px;
+}
+.course{
+  border: 2px solid white;
+  padding: 10px;
+ 
+}
+.course a{
+  text-decoration: none;
+  color: rgb(219, 204, 204);
+ position: absolute;
+}
+.course p{
+  font-size: 10px;
+  color: rgb(225, 225, 235);
+
+ 
+}
+.dropdown a, .dropdown h6{
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+}
+.dropdown h6{
+  
+  font-size: 17px;
+}
+.show {display:block;}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.dropdown p{
+  color: rgb(100, 181, 247);
+}
+.dropdown .dropbtn{
+  color: white;
+  text-align: left;
+  position: relative;
+  padding: 10px;
+
+
+}
+.dropdown-content{
+  display: block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #051c41;
+  z-index: 1;
+  min-width: 150px;
+}
+.dropdown-content p{
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #dbd9d9;
+  padding-bottom: 0;
+  
+  
+}
+.nav-link{
+  padding: 14px 16px;
+  display: block;
+  color: white;
+  font-weight: bold;
+}
+
+.dropdown a,.dropdown-content a:hover {
+  background-color: #383636;
+}
+
+.show {
+  display: block;
+}
+iframe{
+  margin: 0;
+  padding: 20px;
+  align-items: center;
+  width: 90%;
+  height: 150;
+}
+.dropdown-content .back{
+  color: blue;
+  margin-left: 20%;
+  margin-bottom: 50px;
+  font-size: 20px;
+  background: white;
+}
+.dropdown-content a{
+  color: rgb(238, 238, 245);
+  padding: 10px;
+  font-size: 20px;
+}

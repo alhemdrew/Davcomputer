@@ -1,0 +1,20 @@
+.dropdown-content{
+    display: block;
+}
+.course_desc p{
+
+    font-weight: bold;
+      margin-top: 50px;
+      color: white;
+      padding: 10px ;
+     margin-left: 20px;
+      font-size: 20px;
+      
+      
+    }
+.back{
+background: white;
+}
+    .course_desc a{
+      font-size: 30px;
+    }
