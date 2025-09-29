@@ -416,36 +416,55 @@
   </div>
 </section>
 
-  <!-- PROJECTS & GITHUB -->
-  <section id="projects" aria-labelledby="projectsTitle">
+<!-- PROJECTS & GITHUB -->
+<section id="projects" aria-labelledby="projectsTitle">
+  <div class="container">
     <h2 id="projectsTitle" class="section-title">Selected Projects & GitHub</h2>
-    <p style="text-align:center;color:var(--muted);max-width:900px;margin:0 auto 18px;">
-      Example projects, templates and sample code are hosted on GitHub. Use the repos to bootstrap your own projects or request custom work.
+    <p class="text-muted text-center mb-5" style="max-width:900px; margin:0 auto 30px;">
+      Explore my active repositories and contributions. These projects show my skills in web development, cybersecurity, and practical solutions. Feel free to clone, fork, or collaborate.
     </p>
 
-    <div class="projects-grid" data-aos="fade-up">
-      <div class="project">
-        <h5>Project: School Portal (Web App)</h5>
-        <p class="meta">Stack: React, Node (Express), MySQL — features: auth, roles, assignment upload, grading.</p>
-        <p>Instruction: Clone the repo, run <code>npm install</code>, set environment variables, and run <code>npm run dev</code>. Deploy to Heroku or any VPS.</p>
-        <a href="https://github.com/your-github-account/dav-school-portal" target="_blank" rel="noopener" style="color:var(--accent)">View on GitHub →</a>
+    <div class="projects-grid row g-4" data-aos="fade-up">
+      <!-- Project Card template -->
+      <!-- Using real repo names from your GitHub -->
+      <div class="col-md-6 col-lg-4 project">
+        <h5>Affiliate Marketing Software (Full PHP)</h5>
+        <p class="meta">Stack: PHP, MySQL — an affiliate marketing system with tracking, payouts, dashboards.</p>
+        <p>Instruction: Clone, run `composer install`, configure `.env` for database & payment gateway, then access via `public/`.</p>
+        <a href="https://github.com/alhemdrew/advance_affliate_marketing_software-didital_marketing_full_PHP" target="_blank" rel="noopener" class="link-accent">
+          View on GitHub →  
+        </a>
       </div>
 
-      <div class="project">
-        <h5>Project: Portfolio Template</h5>
-        <p class="meta">Stack: HTML/CSS/Vanilla JS — fast template for personal portfolios and small shops.</p>
-        <p>Instruction: Edit <code>index.html</code> to replace images and text, push to GitHub, enable GitHub Pages for live hosting.</p>
-        <a href="https://github.com/your-github-account/dav-portfolio" target="_blank" rel="noopener" style="color:var(--accent)">View on GitHub →</a>
+      <div class="col-md-6 col-lg-4 project">
+        <h5>Davcademy Learning Platform</h5>
+        <p class="meta">Stack: HTML / CSS / JS — e-learning site with course listings, quizzes, and user dashboard.</p>
+        <p>Instruction: Fork the repo, run `npm install`, then host via static server or GitHub Pages. Customize course content files.</p>
+        <a href="https://github.com/alhemdrew/Davcademy" target="_blank" rel="noopener" class="link-accent">
+          View on GitHub →  
+        </a>
       </div>
 
-      <div class="project">
-        <h5>Project: Secure API Starter</h5>
-        <p class="meta">Stack: Node + JWT + Rate limiting — ready for production templates.</p>
-        <p>Instruction: Follow README for env setup, create .env with DB and JWT secret, run migrations, start server.</p>
-        <a href="https://github.com/your-github-account/dav-secure-api" target="_blank" rel="noopener" style="color:var(--accent)">View on GitHub →</a>
+      <div class="col-md-6 col-lg-4 project">
+        <h5>Face Recognition Software</h5>
+        <p class="meta">Stack: Python / OpenCV / ML — real-time face detection and recognition tool.</p>
+        <p>Instruction: Install dependencies, run `python main.py`, and use webcam. Configure `dataset/` to train own faces.</p>
+        <a href="https://github.com/alhemdrew/Face_recognition_software" target="_blank" rel="noopener" class="link-accent">
+          View on GitHub →  
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project">
+        <h5>cerbrutus (Brute-force Tool)</h5>
+        <p class="meta">Stack: Python / Networking — brute force and network brute utility (0dayCTF tool).</p>
+        <p>Instruction: Clone, set target hosts and ports in config file, run via terminal. Use with caution and authorization only.</p>
+        <a href="https://github.com/alhemdrew/cerbrutus-by.0dayCTF-" target="_blank" rel="noopener" class="link-accent">
+          View on GitHub →  
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
   
@@ -641,6 +660,7 @@
   </script>
 </body>
 </html>
+
 
 
 
