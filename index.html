@@ -1,368 +1,544 @@
 <!DOCTYPE html>
-<!-- coding by alhemdrew-->
+<!-- DavComputer - Single file: Purple Neo Vibe with Light/Dark Toggle, Vanta BG, WhatsApp chat, Formspree -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Davenchi's | Computer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover" />
+  <title>DavComputer | Web Apps · Cybersecurity · Training</title>
 
-  
-    
-    
+  <!-- SEO & Social -->
+  <meta name="description" content="DavComputer — Web App Development, Cybersecurity services & professional classes. Lokokoma, Abuja. Contact: davenchi.computer@gmail.com">
+  <meta property="og:title" content="DavComputer — Web Apps & Cybersecurity">
+  <meta property="og:description" content="Professional web apps, security services and practical classes. Based in Lokokoma, Abuja.">
+  <meta property="og:image" content="IMG/DC logo.jpg">
+  <meta name="theme-color" content="#5B21B6">
 
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
-    <link href="//www.google-analytics.com" rel="dns-prefetch">
-    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+  <!-- Fonts & Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Inline theme + layout CSS -->
+  <style>
+    :root{
+      --bg: #0b0716;          /* deep purple background */
+      --card: #100824;
+      --muted: #e8e9f0;
+      --accent: #8b5cf6;      /* purple glow */
+      --accent-2: #7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --text: #e6e9ff;
+      --success: #34d399;
+      --nav-height: 76px;
+      --max-width: 1200px;
+    }
+
+    /* Light theme variables (applied when body has .light-theme) */
+   body.light-theme {
+  --bg: #fab5f6;        /* very light lavender background */
+  --card: #ffffff;      /* clean white cards */
+  --muted: #f8fafc;     /* neutral gray for secondary text */
+  --accent: #7c3aed;    /* vivid purple accent */
+  --accent-2: #9333ea;  /* deeper purple for contrast */
+  --glass: rgba(147, 51, 234, 0.05); /* subtle purple glass overlay */
+  --text: #1f2937;      /* dark gray, readable on light bg */
+  --success: #16a34a;   /* green for success (forms/buttons) */
+  --warning: #f59e0b;   /* amber for highlights */
+  --danger: #dc2626;    /* red for errors */
+}
 
 
-    <meta name="csrf_token" content="MpyseGo7Q7z6k398Ujx4glfzznzdcqMzlTaorKwd" />
-            <title>DAVCOMPUTER ONLINE SERVICE PLATFORM </title>
-        
-            <meta property="fb:app_id" content="256860884709676" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="DAVCOMPUTER ONLINE SERVICE PLATFORM " />
-            <meta property="og:description" content="&lt;p&gt;&lt;strong style=&quot;color: rgb(230, 0, 0);&quot;&gt;&lt;u&gt;FINALLY, ONE CAN ACCESS COMPUTER BASE ASSISSTANCEFROMANYWHERE AT ALL TIMES!&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;If you are looking for an easy way to get your work down with high quality, we are here to provide you with it..." />
-            
-                
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,Segoe UI,Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg), #070516);
+      color:var(--text);
+      padding-top: var(--nav-height);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tryselar" />
-        <meta name="twitter:title" content="DAVCOMPUTER ONLINE SERVICE PLATFORM " />
-        <meta name="twitter:description" content="FINALLY, ONE CAN ACCESS COMPUTER BASE ASSISSTANCE FROMANY WHERE AT ALL TIMES!. If you are looking for an easy way to get your work down with high quality, we are here to provide you with it...." />
-        <meta name="twitter:creator" content="@tryselar" />
-        <meta property="twitter:image:height" value="676" />
-        <meta property="twitter:image:width" value="547" />
-        <meta property="twitter:data1" value="NGN 10,000" />
-        <meta property="twitter:label1" value="PRICE" />
-        <meta property="twitter:domain" value="Selar" />
-        <meta name="description" content="FINALLY, ONE CAN ACCESS COMPUTER BASE ASSISSTANCEFROMANYWHERE AT ALL TIMES!. If you are looking for an easy way to get your work down with high quality, we are here to provide you with it... &nbsp;">
-        
-        <meta property="twitter:data2" value="" />
-        <meta property="twitter:label2" value="SIZE" />
-<link rel="shortcut icon" type="image/png" href="IMG/DC logo.jpg">
-    <link href="https://files.selar.co/v5-website-assets/apps/selar-app/store/production/css/app.css?id=41564cfc6b9e2139c67fbca7324b69e2" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+    /* NAVBAR */
+    .navbar {
+      background: linear-gradient(90deg,var(--accent-2),var(--accent));
+      height: var(--nav-height);
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:1200;
+      box-shadow: 0 8px 30px rgba(11,7,22,0.6);
+      transition: background .25s ease, height .15s ease;
+    }
+    .navbar .brand-img { height:36px; width:36px; border-radius:8px; object-fit:cover; }
+    .navbar .brand-text { font-weight:700; letter-spacing:0.2px; color:#fff; margin-left:8px; }
 
+    .nav-link { color: rgba(255,255,255,0.92) !important; font-weight:500; }
+    .nav-link:hover { color: #fff !important; transform:translateY(-2px); }
 
-        
-         <meta name="keyword" content="free courses, online school, computer assisstance, computer, nasarawa, fpn, federal polytechnic, Dav, DavCademy, davcomputer, Alhemdrew Davenchi, School, Website, Web development, online service">
-         <meta content="DAVCOMPUTER"
-         property="og:site_name">
+    /* theme toggle button */
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      padding:8px 10px;
+      border-radius:10px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      cursor:pointer;
+    }
 
-    <!-- Google Fonts Link For Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?
-    family=kuashan+Script|poppins&display=swap" rel="stylesheet">
-    
+    /* HERO with VANTA canvas */
+    #hero {
+      position:relative;
+      min-height: calc(100vh - var(--nav-height));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 40px 20px;
+      overflow:hidden;
+    }
+    #hero-bg{ position:absolute; inset:0; z-index:0; }
+    #hero-bg canvas { width:100% !important; height:100% !important; display:block; }
+
+    .hero-inner{ position:relative; z-index:2; max-width:var(--max-width); width:100%; padding:2rem; margin: 0 auto; }
+    .hero-card {
+      display:inline-block;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 10px 40px rgba(8,7,17,0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero-title { font-size: clamp(1.8rem,6.5vw,3.4rem); margin:0 0 8px; line-height:1.02; }
+    .hero-sub { font-size: clamp(0.95rem,2.3vw,1.15rem); color:var(--muted); margin-bottom:16px; }
+    .typed { color:var(--accent); font-weight:700; }
+
+    .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+    .btn-primary-neo {
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      border:none; color:white; padding:12px 20px; border-radius:999px; font-weight:600;
+      box-shadow: 0 10px 30px rgba(124,58,237,0.18);
+    }
+    .btn-outline-neo {
+      background:transparent; border:1px solid rgba(255,255,255,0.08); color:var(--text); padding:10px 18px; border-radius:999px;
+    }
+
+    /* SERVICES */
+    section { padding:60px 20px; }
+    h2.section-title { text-align:center; margin-bottom:28px; font-weight:700; color:var(--text); }
+    .services-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:20px; max-width:1200px; margin:0 auto; }
+    .service {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px; padding:18px; border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45); transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .service:hover { transform:translateY(-8px); box-shadow: 0 18px 50px rgba(0,0,0,0.55); }
+    .service h4 { margin-top:10px; color:var(--text); }
+    .service p.lead { color:var(--muted); font-size:0.95rem; }
+
+    .service ul { margin-top:12px; color:var(--muted); }
+    .service .instructions { margin-top:12px; font-size:0.93rem; color:#ba84ec; }
+
+    /* PROJECTS / GITHUB (cards) */
+    .projects-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:18px; max-width:1200px; margin:0 auto; }
+    .project {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.04);
+    }
+    .project .meta { color:whitesmoke; font-size:0.9rem; }
+.project p { color:whitesmoke;  }
+    /* CONTACT */
+    .contact-grid { display:grid; grid-template-columns: 1fr 380px; gap:22px; max-width:1200px; margin:0 auto; }
+    .contact-card {
+      background: var(--card); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.04);
+    }
+    label.form-label { color:var(--muted); font-weight:600; font-size:0.9rem; }
+    .form-control {
+      background:transparent; border:3px solid rgba(219, 48, 48, 0.06); color:var(--text);
+      border-radius:8px; padding:12px;
+    }
+    .form-control::placeholder { color:rgba(247, 127, 193, 0.35); }
+
+    /* Gallery */
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    /* WhatsApp floating button */
+    .whatsapp-fab {
+      position:fixed; right:18px; bottom:18px; z-index:1400;
+      background: linear-gradient(90deg,#25D366,#25b867); color:#fff; border-radius:999px; padding:12px 16px; display:flex; gap:10px; align-items:center;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.16); text-decoration:none;
+    }
+    .whatsapp-fab .label { display:none; font-weight:700; }
+    @media(min-width:720px){ .whatsapp-fab .label { display:inline-block; } }
+
+    /* Footer */
+    footer { padding:24px 20px; text-align:center; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03); }
+
+    /* responsive tweaks */
+    @media(max-width:920px){
+      .contact-grid { grid-template-columns: 1fr; }
+      body { padding-top: var(--nav-height); }
+    }
+    @media(max-width:600px){
+      .hero-card { padding:18px; }
+      .cta-row { gap:10px; }
+    }
+
+    /* small accessibility / focus */
+    a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(139,92,246,0.18); outline-offset:2px; }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <span class="hamburger-btn material-symbols-rounded">menu</span>
-            <a href="#" class="logo">
-                <img src="IMG/DC logo.jpg" alt="logo">
-                <h2><span class="dav">Dav</span>Computer</h2>
-            </a>
-            <ul class="links">
-                <span class="close-btn material-symbols-rounded">close</span>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="https://davcomputer.com.ng/davcademy" class="sch">Free Online Courses</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-            </ul>
-        <!---  <button class="login-btn">LOG IN</button>---->  
-        </nav>
-    </header>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Main">
+    <div class="container">
+      <a class="d-flex align-items-center text-decoration-none" href="#">
+        <img src="IMG/DC logo.jpg" alt="logo" class="brand-img" />
+        <span class="brand-text ms-2">DavComputer</span>
+      </a>
 
-    <div class="blur-bg-overlay"></div>
-    <div class="form-popup">
-        <span class="close-btn material-symbols-rounded">close</span>
-        <div class="form-box login">
-            <div class="form-details">
-                <h2>Welcome Back</h2>
-                <p>Please log in using your personal information to stay connected with us.</p>
-            </div>
-            <div class="form-content">
-                <h2>LOGIN</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <a href="#" class="forgot-pass-link">Forgot password?</a>
-                    <button type="submit">Log In</button>
-                </form>
-                <div class="bottom-link">
-                    Don't have an account?
-                    <a href="#" id="signup-link">Signup</a>
-                </div>
-            </div>
-        </div>
-        <div class="form-box signup">
-            <div class="form-details">
-                <h2>Create Account</h2>
-                <p>To become a part of our community, please sign up using your personal information.</p>
-            </div>
-            <div class="form-content">
-                <h2>SIGNUP</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Enter your email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Create password</label>
-                    </div>
-                    <div class="policy-text">
-                        <input type="checkbox" id="policy">
-                        <label for="policy">
-                            I agree the
-                            <a href="#" class="option">Terms & Conditions</a>
-                        </label>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-                <div class="bottom-link">
-                    Already have an account? 
-                    <a href="#" id="login-link">Login</a>
-                </div>
-            </div>
-        </div>
-    </div> 
-    <section id="box-area">
-       <div class="box-text">
-        <h1>davcomputer</h1>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <p>A computing platform that offers all computer experience</p>
-        <div class="box">
-
-            
-        <a href="#service-desc"><span></span><strong> GET<br> COMPUTER BASE ASSISSTANCE </strong>
-            <p>We offer numerous computer assistance.</p>
-        </a>
-
-        <a href="#service-desc"><span></span><strong> GET <br> YOUR PROJECTS</strong>
-            <p>We create amazing projects for students and individuals from all levels</p>
-        </a>
-            <a href="#service-desc"><span></span><strong> LEARN <br> WEB DEVELOPMENT </strong>
-            <p>Learn to code, by learning the basic fundamental language of web development</p>
-            </a> 
-            <a href="#service-desc"><span></span><strong> GET YOUR PERSONAL WEBSITE </strong>
-                <p>We design excellent web pages of all kind for various uses</p>
-            </a>
-           
-           
-
-
-        </div>
-        <div class="messageBtn">
-            <a href="https://wa.me/09038095604?text=Hello,%20am%20contacting%20from%20Davcomputer%20Online?%20....">Send us a message on whatsapp</a>
-
-        </div>
-       </div> 
-
-
-       <!--features--> 
-    </section>
-    <section id="feature">
-<div class="tittle-text"> 
-    <p>FEATURES</p>
-    <h1>Why choose us</h1>
-</div>
-
-<div id="feature-box">
-    <div class="features-item">
-        <h1>Experienced staff</h1>
-        <div class="feature-desc">
-        <div class="feature-icon">
-            <i class="fa fa-shield"> </i>
-        </div>
-        <div class="feature-text">
-            <p>Our staffs are top in various skill set, there are expert in computer engineering, programing, Software development,... <br> They make sure your needs/requirments are met.</p>
-        </div>
-        </div>
-        
-        <h1>Pre Online Services</h1>
-        <div class="feature-desc">
-        <div class="feature-icon">
-            <i class="fa fa-check-square-o"> </i>
-        </div>
-        <div class="feature-text">
-            <p>Aside from our offline service providers, we respond to requests from our online users. <br>
-            one can drop a message on our contact page and we will respond to you as quick as posible. Immediate reponds is made during working days.</p>
-        </div>
-        </div> <h1>Affordable Cost</h1>
-        <div class="feature-desc">
-        <div class="feature-icon">
-            <i class="fa-solid fa-money-bill"></i>
-        </div>
-        <div class="feature-text">
-            <p>Our service fee is outrageously affordable, we dont charge extra while redering the quality services.</p>
-        </div>
-        </div>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2">
+            <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle light/dark">
+              <i id="themeIcon" class="fa-regular fa-moon"></i>
+              <span class="d-none d-sm-inline">Theme</span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    
-    <div class="features-img">
-        <Img src="IMG/login-img.jpg"></Img>
-        <div class="feature-img-color"></div>
+  <!-- HERO -->
+  <section id="hero" aria-label="Intro">
+    <div id="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-card animate__animated animate__fadeInUp">
+        <h1 class="hero-title">Welcome to <span class="typed">DavComputer</span></h1>
+        <p class="hero-sub">We build <strong>Web Applications</strong>, secure them with <strong>Cybersecurity</strong> best practices, and teach both through practical classes.</p>
+
+        <div class="cta-row">
+          <a class="btn-primary-neo btn" href="#services">View Services</a>
+          <a class="btn-outline-neo btn" href="#contact">Contact Us</a>
+        </div>
+
+        <p style="margin-top:14px;color:var(--muted);font-size:0.92rem;">
+          <strong>Address:</strong> Lokokoma, Abuja — <strong>Email:</strong> <a href="mailto:davenchi.computer@gmail.com" style="color:var(--accent)">davenchi.computer@gmail.com</a>
+        </p>
+      </div>
     </div>
+  </section>
 
-    
-</div>
-    </section>
+  <!-- SERVICES (Detailed) -->
+  <section id="services" aria-labelledby="servicesTitle">
+    <h2 id="servicesTitle" class="section-title">Our Services — What we do</h2>
 
-    <!--service-->
-
-    <section id="Services">
-        <div class="tittle-text"> 
-            <p>SERVICES</p>
-            <h1>We Provide Better</h1>
+    <div class="services-grid" role="list"  >
+      <article class="service" role="listitem" data-aos="fade-up">
+        <i class="fa-solid fa-laptop-code fa-2x" style="color:var(--accent)"></i>
+        <h4>Web App Development</h4>
+        <p class="lead">Custom web applications (frontend + backend) for businesses, schools and individuals.</p>
+        <ul>
+          <li>React/Vue frontend, PHP/Node/Python backend, REST & GraphQL APIs</li>
+          <li>Database design, authentication, file uploads, and hosting</li>
+          <li>Progressive Web Apps (PWA) and mobile-friendly UIs</li>
+        </ul>
+        <div class="instructions">
+          <strong>How to engage:</strong> Send requirements (features, example sites, timeline, budget) — we provide a proposal and milestone plan. For students: we can build a capstone project with you.
         </div>
-        <div class="service-box">
-           
-             <div class="single-service">
-            <img src="IMG/Lake 1.jpg" alt=""> 
-            <div class="overlay"></div>   
-            <div class="service-desc">
-                <h3>Computer service</h3>
-                <hr>
-                <p>We provide such services like online registration, online payment, assignments....., <br>and any other computing assistance.
-                   <a href="#" class="more">more</a>
-                </p>
-            </div>
+      </article>
 
-            </div>
-             <div class="single-service">
-                  <img src="IMG/Lake 2.png" alt="">
-                  <div class="overlay"></div>   
-                  <div class="service-desc">
-                    <h3>Get your project</h3>
-                    <hr>
-                    <p>We have custom and already made projects and project topics for students. <br> we can be contacted if you feel like having us prepare a project for you. <br>we have excellent copywrite experts.<a href="#" class="more">more</a>
-                    </p>      
-            </div>
+      <article class="service" role="listitem" data-aos="fade-up" data-aos-delay="120">
+        <i class="fa-solid fa-shield-halved fa-2x" style="color:var(--accent)"></i>
+        <h4>Cybersecurity Services</h4>
+        <p class="lead">Protect systems from attacks — audits, penetration testing, hardening and monitoring.</p>
+        <ul>
+          <li>Vulnerability scanning, pen-test reports with prioritized fixes</li>
+          <li>Secure configuration (firewalls, SSH, backups), incident response</li>
+          <li>Security training for teams & students</li>
+        </ul>
+        <div class="instructions">
+          <strong>How to start:</strong> Book a discovery call — we run a light security assessment, then recommend an action plan (quick fixes, medium-term, long-term).
         </div>
-             <div class="single-service"> 
+      </article>
 
-                <img src="IMG/Lake 3.png" class="img-service">
-                <div class="overlay"></div> 
-                <div class="service-desc">  
-                <h3>learn Web Development</h3>
-                <hr>
-                <p>learn to code using the three fundament programing language
-                    for Web Development and the basis 
-                    of publishing your website online... Check our free online courses.<a href="https/davcomputer.com.ng/DavCademy" class="more">more</a>
-                </p>
-             </div>
-            </div>
-             <div class="single-service"> 
-                <img src="IMG/Lake 4.png" alt="">
-                <div class="overlay"></div>  
-                <div class="service-desc"> 
-                <h3>Get your custom website</h3>
-                <hr>
-                <p>We build web pages for small and medium exterprises seeking to own a website either for matkerting, blogging, fashion, Portfolio.... click<a href="https://wa.me/09038095604?text=Hello,%20am%20contacting%20from%20Davcomputer%20Online%website-inquiry?%20...." class="more">more</a> to learn more
-                </p>
-             </div>
-            </div>
+      <article class="service" role="listitem" data-aos="fade-up" data-aos-delay="240">
+        <i class="fa-solid fa-chalkboard-teacher fa-2x" style="color:var(--accent)"></i>
+        <h4>Web App Development Classes</h4>
+        <p class="lead">Hands-on classes: HTML/CSS, JavaScript, React, backend basics and deployment.</p>
+        <ul>
+          <li>Beginner → Intermediate course paths with real projects</li>
+          <li>Live coding, assignments, and project reviews</li>
+          <li>Certificate and deployment on GitHub Pages / Shared hosting</li>
+        </ul>
+        <div class="instructions">
+          <strong>Join:</strong> Enroll via contact form — include your skill level and preferred schedule. We provide project templates and GitHub onboarding.
         </div>
+      </article>
 
-    </section>
-
-    <!----Testimonials----->
-
-    <section id="Testimonials">
-        <div class="tittle-text"> 
-            <p>TESTIMONIAL</p>
-            <h1>What Client Says</h1>
+      <article class="service" role="listitem" data-aos="fade-up" data-aos-delay="360">
+        <i class="fa-solid fa-user-shield fa-2x" style="color:var(--accent)"></i>
+        <h4>Cybersecurity Classes</h4>
+        <p class="lead">Practical security training: threat modeling, ethical hacking basics, secure coding.</p>
+        <ul>
+          <li>Intro to Kali, Burp Suite, Nmap; safe labs on isolated VMs</li>
+          <li>Secure coding workshops and review sessions</li>
+          <li>Capture-the-Flag (CTF) style practical challenges</li>
+        </ul>
+        <div class="instructions">
+          <strong>How it works:</strong> Classes include slide + demo + lab exercises. We provide VM images and step-by-step lab instructions.
         </div>
-
-        <div class="testimonial-row">
-            <div class="testimonial-col">
-                <div class="user">
-                    <img src="/IMG/Boy.png" alt="">
-                    <div class="user-info">
-                        <h4>SUNDAY AKOR <i class="fa fa-twitter"></i></h4>
-                        <small>@Sunnyakor</small>
-                    </div>
-                </div>
-                <p>I really enjoined your service, at least now i don't have to walk down to a cafe to get my work done. thanks dav</p>
-            </div>
-            <div class="testimonial-col">
-                <div class="user">
-                    <img src="/IMG/Boy.png" alt="">
-                    <div class="user-info">
-                        <h4>IBRAHIM ABDUL <i class="fa-facebook"></i></h4>
-                        <small>@IBBRAHIM YOUNG</small>
-                    </div>
-                </div>
-                <p>Thanks for an amasing service.</p>
-            </div>
-            <div class="testimonial-col">
-                <div class="user">
-                    <img src="/IMG/Boy.png" alt="">
-                    <div class="user-info">
-                        <h4>Faith Machi <i class="offline"></i></h4>
-                        <small>Offline</small>
-                    </div> 
-                </div>
-                <p>I am really glad that i get to know davcomputer, at least now i can call my self a web-developer. I am now a step from becoming a front-end Programmar. </p>
-                </div>
-        </div>
-
-
-    </section>
-
-
-<!----footer---->
-<Section id="footer">
-        <img src="IMG/Screenshot_20230903-202806.png" class="footer-img">
-        <div class="tittle-text"> 
-        <p>CONTENT</p>
-        <h1>Visit Shop Today</h1>
+      </article>
     </div>
+  </section>
 
-    <div class="footer-row">
-        <div class="footer-left">
-            <h1>Opening Hours</h1>
-            <p> <i class="fa fa-clock-o"></i>Monday to Saturday - 8am to 10pm</p>
-            <p><i class="fa fa-clock-o"></i>Sunday - 12pm to 11pm</p>
-        </div>
-        <div class="footer-right">
-            <h1>Get In Touch</h1>
-            <p>#Beside Tarmah Primary School, Nasarawa , Nasarawa state. Shop No x<i class="fa fa-map"></i></p>
-            <p>davcomputer333@gmail.com@gmail.com<i class="fa fa-paper-plane"></i></p>
-            <p>+234 9038095604<i class="fa fa-phone"></i></p>
-        </div>
+  <!-- PROJECTS & GITHUB -->
+  <section id="projects" aria-labelledby="projectsTitle">
+    <h2 id="projectsTitle" class="section-title">Selected Projects & GitHub</h2>
+    <p style="text-align:center;color:var(--muted);max-width:900px;margin:0 auto 18px;">
+      Example projects, templates and sample code are hosted on GitHub. Use the repos to bootstrap your own projects or request custom work.
+    </p>
+
+    <div class="projects-grid" data-aos="fade-up">
+      <div class="project">
+        <h5>Project: School Portal (Web App)</h5>
+        <p class="meta">Stack: React, Node (Express), MySQL — features: auth, roles, assignment upload, grading.</p>
+        <p>Instruction: Clone the repo, run <code>npm install</code>, set environment variables, and run <code>npm run dev</code>. Deploy to Heroku or any VPS.</p>
+        <a href="https://github.com/your-github-account/dav-school-portal" target="_blank" rel="noopener" style="color:var(--accent)">View on GitHub →</a>
+      </div>
+
+      <div class="project">
+        <h5>Project: Portfolio Template</h5>
+        <p class="meta">Stack: HTML/CSS/Vanilla JS — fast template for personal portfolios and small shops.</p>
+        <p>Instruction: Edit <code>index.html</code> to replace images and text, push to GitHub, enable GitHub Pages for live hosting.</p>
+        <a href="https://github.com/your-github-account/dav-portfolio" target="_blank" rel="noopener" style="color:var(--accent)">View on GitHub →</a>
+      </div>
+
+      <div class="project">
+        <h5>Project: Secure API Starter</h5>
+        <p class="meta">Stack: Node + JWT + Rate limiting — ready for production templates.</p>
+        <p>Instruction: Follow README for env setup, create .env with DB and JWT secret, run migrations, start server.</p>
+        <a href="https://github.com/your-github-account/dav-secure-api" target="_blank" rel="noopener" style="color:var(--accent)">View on GitHub →</a>
+      </div>
     </div>
+  </section>
 
-<div class="social-links">
-    <i class="fa fa-facebook"></i>
-    <i class="fa fa-instagram"></i>
-    <i class="fa fa-twitter"></i>
-    <i class="fa fa-youtube-play"></i>
-    
-    
 
-</div>
+  
+  <!-- Gallery -->
+  <section id="gallery" class="container">
+    <h2 class="text-center mb-5">Our Work & Projects</h2>
+    <div class="row g-4 gallery">
+      <div class="col-md-4"><img src="IMG/sample1.jpg" alt="Project"></div>
+      <div class="col-md-4"><img src="IMG/sample2.jpg" alt="Project"></div>
+      <div class="col-md-4"><img src="IMG/sample3.jpg" alt="Project"></div>
+    </div>
+  </section>
 
-<div class="footer__copyright">
-    <small>Copyright &copy; DavCademy YouTube</small>
-</div>
-</Section>
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contactTitle">
+    <h2 id="contactTitle" class="section-title">Contact & Enroll</h2>
 
-    <script src="script.js" defer></script>
+    <div class="contact-grid" data-aos="fade-up">
+      <!-- Form -->
+      <div class="contact-card" aria-label="Contact form">
+        <form id="contactForm" action="https://formspree.io/f/mzzjejoz" method="POST" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Full name</label>
+            <input id="name" name="name" class="form-control" placeholder="Your full name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input id="subject" name="subject" class="form-control" placeholder="Short summary (e.g., 'Enroll Web Dev')" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message / Requirements</label>
+            <textarea id="message" name="message" rows="6" class="form-control" placeholder="Tell us your needs, level, schedule, and budget" required></textarea>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button id="submitBtn" type="submit" class="btn btn-primary btn-lg" style="background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;">
+              Send Message — We’ll reply within 24 hours
+            </button>
+          </div>
+
+          <small style="color:var(--muted);display:block;margin-top:12px;">
+            By sending this message you agree to be contacted by DavComputer. We do not share your information.
+          </small>
+        </form>
+      </div>
+
+      <!-- Info panel -->
+      <aside class="contact-card" aria-label="Contact info & map">
+        <h5 style="margin-top:0">Get in Touch</h5>
+        <p style="color:var(--muted)"><i class="fa-solid fa-location-dot" style="color:var(--accent)"></i> Lokokoma, Abuja</p>
+        <p style="color:var(--muted)"><i class="fa-solid fa-envelope" style="color:var(--accent)"></i> <a href="mailto:davenchi.computer@gmail.com" style="color:var(--accent)">davenchi.computer@gmail.com</a></p>
+        <p style="color:var(--muted)"><i class="fa-solid fa-phone" style="color:var(--accent)"></i> <a href="tel:+2349038095604" style="color:var(--accent)">+234 903 809 5604</a></p>
+
+        <hr style="border-color: rgba(255,255,255,0.04)">
+
+        <h6 style="margin-bottom:8px">Working Hours</h6>
+        <p style="color:var(--muted)">Mon–Sat: 8:00 AM — 8:00 PM<br>Sun: 11:00 AM — 6:00 PM</p>
+
+        <div style="margin-top:12px" class="mb-3">
+          <strong style="display:block;margin-bottom:8px">Quick Links</strong>
+          <a href="#services" class="btn btn-sm btn-outline-light mb-2">Our Services</a>
+          <a href="https://github.com/your-github-account" target="_blank" rel="noopener" class="btn btn-sm btn-outline-light mb-2">GitHub Page</a>
+        </div>
+
+        <div style="margin-top:14px">
+          <iframe title="Lokokoma map" src="https://maps.google.com/maps?q=Lokokoma%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:200px;border:0;border-radius:10px"></iframe>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- WhatsApp floating (opens chat) -->
+  <!-- Replace phone number with international format. Using provided number +2349038095604 -->
+  <a class="whatsapp-fab" href="https://wa.me/2349038095604?text=Hello%20DavComputer!%20I%20want%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i>
+    <span class="label">Chat us on WhatsApp</span>
+  </a>
+
+  <footer>
+    <small>&copy; <span id="year"></span> DavComputer — Lokokoma, Abuja. <a href="mailto:davenchi.computer@gmail.com" style="color:var(--accent)">davenchi.computer@gmail.com</a></small>
+  </footer>
+
+  <!-- Scripts: Three.js, Vanta, Bootstrap, AOS, Typed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script>
+    // -- Page init
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // AOS
+    AOS.init({ duration: 900, once: true });
+
+    // Typed: headline highlight
+    const typed = new Typed('.typed', {
+      strings: ["DavComputer", "Your IT Partner", "Web Apps · Cybersecurity"],
+      typeSpeed: 90,
+      backSpeed: 50,
+      backDelay: 1600,
+      loop: true
+    });
+
+    // Vanta Net - purple theme
+    (function initVanta(){
+      try {
+        VANTA.NET({
+          el: "#hero-bg",
+          mouseControls: true,
+          touchControls: true,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x6b21a8,       // purple nodes
+          backgroundColor: 0x0b0716, // dark background
+          points: 12.00,
+          maxDistance: 20.00
+        });
+      } catch(e){
+        console.warn('Vanta init failed', e);
+      }
+    })();
+
+    // Theme toggle: persist in localStorage
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const root = document.documentElement;
+    function applyTheme(theme){
+      if(theme === 'light'){
+        document.body.classList.add('light-theme');
+        themeIcon.className = 'fa-regular fa-sun';
+        themeToggle.setAttribute('aria-pressed','true');
+      } else {
+        document.body.classList.remove('light-theme');
+        themeIcon.className = 'fa-regular fa-moon';
+        themeToggle.setAttribute('aria-pressed','false');
+      }
+    }
+    // read stored preference
+    const stored = localStorage.getItem('dav-theme');
+    if(stored){ applyTheme(stored); }
+    else {
+      // default prefers dark
+      applyTheme('dark');
+    }
+    themeToggle.addEventListener('click', ()=>{
+      const isLight = document.body.classList.contains('light-theme');
+      const next = isLight ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem('dav-theme', next);
+    });
+
+    // Dynamically set CSS var --nav-height so body padding matches actual navbar
+    function setNavPadding(){
+      const nav = document.querySelector('.navbar');
+      if(!nav) return;
+      const h = nav.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--nav-height', h + 'px');
+      document.body.style.paddingTop = h + 'px';
+    }
+    window.addEventListener('load', setNavPadding);
+    window.addEventListener('resize', setNavPadding);
+
+    // Form: show inline success message and prevent redirect (Formspree still receives)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e){
+      // let Formspree handle the POST; show immediate UI feedback
+      const submitBtn = document.getElementById('submitBtn') || document.querySelector('button[type=submit]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      // After a small delay, show a nice toast (non-blocking). Real delivery is by Formspree.
+      setTimeout(()=>{
+        submitBtn.textContent = 'Sent — Thank you!';
+        submitBtn.classList.add('btn-success');
+        submitBtn.style.background = 'linear-gradient(90deg,var(--success),#06b6a4)';
+      }, 900);
+      // let the form continue to submit normally to Formspree
+    });
+
+    // Accessibility: close mobile menu on nav link click
+    (function closeMenuOnClick(){
+      const bsCollapse = document.getElementById('navMenu');
+      if(!bsCollapse) return;
+      bsCollapse.addEventListener('click', e=>{
+        if(e.target.tagName === 'A' && window.getComputedStyle(document.querySelector('.navbar-toggler')).display !== 'none'){
+          const collapse = bootstrap.Collapse.getInstance(bsCollapse) || new bootstrap.Collapse(bsCollapse);
+          collapse.hide();
+        }
+      });
+    })();
+
+  </script>
 </body>
 </html>
