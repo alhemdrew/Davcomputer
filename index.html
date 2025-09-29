@@ -166,11 +166,53 @@
     .form-control::placeholder { color:rgba(247, 127, 193, 0.35); }
 
     /* Gallery */
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
+    /* Gallery Section */
+#gallery {
+  background: var(--bg);
+  color: var(--text);
+}
+#gallery h2 {
+  color: var(--accent-2);
+  font-size: 2.2rem;
+}
+
+/* Gallery Items */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(80%);
+}
+
+/* Overlay effect */
+.gallery-item::after {
+  content: "🔍 View";
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
     /* WhatsApp floating button */
     .whatsapp-fab {
       position:fixed; right:18px; bottom:18px; z-index:1400;
@@ -344,16 +386,35 @@
 
 
   
-  <!-- Gallery -->
-  <section id="gallery" class="container">
-    <h2 class="text-center mb-5">Our Work & World</h2>
+<!-- Gallery -->
+<section id="gallery" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Our Work & World</h2>
     <div class="row g-4 gallery">
-      <div class="col-md-4"><img src="IMG/cyber_sec.jpg" alt="Project"></div>
-      <div class="col-md-4"><img src="IMG/webdav.png" alt="Project"></div>
-      <div class="col-md-4"><img src="IMG/cybersec_tain .png" alt="Project"></div>
-      <div class="col-md-4"><img src="IMG/webdev_tain.jpg" alt="Project"></div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="gallery-item">
+          <img src="IMG/cyber_sec.jpg" alt="Cybersecurity Project" class="img-fluid rounded shadow">
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="gallery-item">
+          <img src="IMG/webdav.png" alt="Web App Project" class="img-fluid rounded shadow">
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="gallery-item">
+          <img src="IMG/cybersec_tain.png" alt="Cybersecurity Training" class="img-fluid rounded shadow">
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="gallery-item">
+          <img src="IMG/webdev_tain.jpg" alt="Web Dev Training" class="img-fluid rounded shadow">
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- CONTACT -->
   <section id="contact" aria-labelledby="contactTitle">
@@ -543,5 +604,6 @@
   </script>
 </body>
 </html>
+
 
 
